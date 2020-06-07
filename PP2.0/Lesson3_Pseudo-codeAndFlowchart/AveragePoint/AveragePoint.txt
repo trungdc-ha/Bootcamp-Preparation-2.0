@@ -1,0 +1,21 @@
+BEGIN
+	INPUT point
+	IF point => 75
+		DISPLAY typeA
+	ELSE
+		IF 60 <= point < 75
+			DISPLAY typeB
+		ELSE
+			IF 45 <= point < 60
+				DISPLAY typeC
+			ELSE
+				IF 35 <= point < 45
+					DISPLAY typeD
+				ELSE
+					DISPLAY	typeE
+				END IF
+			END IF
+		END IF
+	END IF
+END
+				

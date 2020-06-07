@@ -1,0 +1,5 @@
+BEGIN
+	INPUT USDMoney
+	VNDMoney = USDMoney x 23000
+	DISPLAY VNDMoney
+END

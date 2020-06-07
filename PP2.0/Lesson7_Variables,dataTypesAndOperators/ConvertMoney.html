@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert Money</title>
+    <script type="application/javascript">
+        function convertMoney() {
+            let money = document.getElementById("money").value;
+            console.log(money);
+            let result = 0;
+            const rate = 24;
+            result = money/rate;
+            document.getElementById("result").innerHTML = "Result:" + result +" USD";
+        }
+    </script>
+</head>
+<body>
+<form">
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <td>
+                <input id="money" type="text" />
+            </td>
+            <td>
+                <select name="input">
+                    <option value="vn">VietNam</option>
+                </select>
+            </td>
+            <td>
+                <select name="output">
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" value="Convert" onclick="convertMoney()"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" id="result"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

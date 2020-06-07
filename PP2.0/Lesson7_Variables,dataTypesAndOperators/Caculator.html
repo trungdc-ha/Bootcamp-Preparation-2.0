@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script type="application/javascript">
+        function calculate(option) {
+            let input1 = document.getElementById("input1").value;
+            let input2 = document.getElementById("input2").value;
+            let result = "N/A";
+            input1 = parseFloat(input1);
+            input2 = parseFloat(input2);
+            if(option === "+"){
+                result = input1+input2;
+            } else if(option === "-"){
+                result = input1-input2;
+            } else if(option === "*"){
+                result = input1*input2;
+            } else {
+                result = input1/input2;
+            }
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input type="text" id="input1" style="width: 100px">
+    <input type="text" id="input2" style="width: 100px">
+</div>
+<div>
+    <input type="button" id="btn1" value="Addition(+)" onclick="calculate('+');">
+    <input type="button" id="btn2" value="Subtraction(-)" onclick="calculate('-');">
+    <input type="button" id="btn3" value="Multiplication(X)" onclick="calculate('*');">
+    <input type="button" id="btn4" value="Division(/)" onclick="calculate('/');">
+</div>
+<div>
+    <label id="result"></label>
+</div>
+</body>
+</html>
