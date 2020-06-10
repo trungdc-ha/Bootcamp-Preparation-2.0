@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        function tinhGiaiThua() {
+            let n = parseInt(prompt("Nhap so can tinh gia thua:"));
+            let sum = 1;
+            for (let i = n; i >= 1; i--) {
+                sum *= i;
+            }
+            alert("giai thua cua " + n + " la: " + sum);
+        }
+
+        window.onload = tinhGiaiThua;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

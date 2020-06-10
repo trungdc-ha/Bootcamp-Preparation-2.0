@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.
+        let arrStr = ['1', 'j', 'p', '8 ', '2'];
+        let count = 0;
+
+        document.write("Mang ki tu:" +arrStr.join(","));
+        for (let i = 0; i < arrStr.length; i++) {
+            if(isNaN(arrStr[i])){
+                count++;
+            }
+        }
+
+        document.write("</br>So ki tu la so: " + count);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

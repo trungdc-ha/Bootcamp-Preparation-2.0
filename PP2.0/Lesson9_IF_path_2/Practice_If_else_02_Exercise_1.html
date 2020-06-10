@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        //Bài 1: Chuyển từ độ C sang độ F.
+        function convertCtoF() {
+            let doC = parseFloat(document.getElementById("doC").value);
+            let doF = doC*9/5 +32;
+            document.getElementById("result").innerText = doF +"F";
+        }
+    </script>
+</head>
+<body>
+    <div>
+       <input type="text" style="width: 50px;" value="0" onchange="convertCtoF()" id="doC"> C to <span id="result">33.8F</span>
+    </div>
+</body>
+</html>

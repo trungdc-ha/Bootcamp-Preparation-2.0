@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice If else 01 Exercise_4</title>
+    <script type="application/javascript">
+        //Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+        function timSoLonNhat() {
+            let input_soNguyen_1 = prompt("Nhap so nguyen 1:");
+            let input_soNguyen_2 = prompt("Nhap so nguyen 2:");
+            let input_soNguyen_3 = prompt("Nhap so nguyen 3:");
+            let soNguyen1 = parseInt(input_soNguyen_1);
+            let soNguyen2 = parseInt(input_soNguyen_2);
+            let soNguyen3 = parseInt(input_soNguyen_3);
+            let max = soNguyen1;
+            if(soNguyen1 >= soNguyen2){
+                if (soNguyen1 >= soNguyen3){
+                    max = soNguyen1;
+                } else {
+                    max = soNguyen3
+                }
+            } else if (soNguyen2 >= soNguyen3){
+                max = soNguyen2
+            } else {
+                max = soNguyen3
+            }
+            alert("So nguyen lon nhat: "+max)
+        }
+        window.onload = timSoLonNhat;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

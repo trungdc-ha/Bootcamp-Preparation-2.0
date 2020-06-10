@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice_If_else_01_Exercise_6</title>
+    <script type="application/javascript">
+        //Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+        function tinhTienCuocGoi() {
+            let phutGoi = parseInt(document.getElementById("phutGoi").value);
+            let tongTien = phutGoi*800;
+            document.getElementById("result").innerText = "Tong tien cước gọi điện: "+tongTien + " VND";
+        }
+    </script>
+</head>
+<body>
+    <div>Nhập số phút đã gọi:</div>
+    <div>
+        <input type="text" id="phutGoi">
+    </div>
+    <div>
+        <button type="button" onclick="tinhTienCuocGoi()">Tinh Tien</button>
+    </div>
+    <span id="result"></span>
+</body>
+</html>

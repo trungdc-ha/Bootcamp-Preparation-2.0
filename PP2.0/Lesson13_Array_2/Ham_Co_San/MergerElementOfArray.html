@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Noi Chuoi</title>
+    <script type="application/javascript">
+        //Bài 1: Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau. Ví dụ có mảng chuỗi như sau: myColor = ["Red", "Green", "White", "Black"];
+        function noiChuoi() {
+            let myColor = ["Red","Green","White","Black"];
+            document.getElementById("result1").innerText = "Use method toString() of javascript: " + myColor.toString();
+            document.getElementById("result2").innerText = "Use method join() of javascript: " + myColor.join();
+            document.getElementById("result3").innerText = "Use method join(Param) of javascript: " + myColor.join("+");
+        }
+        window.onload = noiChuoi;
+    </script>
+</head>
+<body>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+</body>
+</html>

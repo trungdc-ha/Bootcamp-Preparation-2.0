@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+        let arrInt = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, 12, 13, -14, 15, -16, 17, 18, 19, 20];
+        let inputV = parseInt(prompt("Nhap gia tri V: "));
+        let flg = false;
+        for (let i in arrInt) {
+            if (inputV == arrInt[i]) {
+                alert(inputV + " is in the array");
+                flg = true;
+                break;
+            }
+        }
+        if (!flg) {
+            alert(inputV + " is not in the array");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

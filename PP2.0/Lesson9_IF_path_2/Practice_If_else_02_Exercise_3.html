@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        //Bài 3: Tính diện tích hình vuông khi biết cạnh a.
+        function tinhDienTich() {
+            let a = parseFloat(document.getElementById("canhA").value);
+            let dienTich = Math.pow(a,2);
+            document.getElementById("result").innerText = dienTich +"m";
+        }
+    </script>
+</head>
+<body>
+Canh hinh vuong <input type="text" style="width: 50px;" value="0" onchange="tinhDienTich()" id="canhA">m Co dien tich la <span id="result">0</span>
+</body>
+</html>

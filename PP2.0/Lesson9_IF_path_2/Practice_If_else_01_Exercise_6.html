@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice_If_else_01_Exercise_6</title>
+    <script type="application/javascript">
+        //Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+        function tinhHoaHong() {
+            let numProduct = parseInt(document.getElementById("product").value);
+            let donGia = parseInt(document.getElementById("donGia").value);
+            let hoaHong = parseFloat(numProduct*donGia*30/100);
+            document.getElementById("result").innerText = "Hoa hồng (30% tổng giá trị sản phẩm) nhận được là: "+hoaHong + " VND";
+        }
+    </script>
+</head>
+<body>
+    <div>Nhập số sản phẩm đã bán được:</div>
+    <div>
+        <input type="text" id="product">
+    </div>
+    <div>Đơn giá của sản phẩm:</div>
+    <div>
+        <select id="donGia">
+            <option value="15000">15000 VND</option>
+            <option value="20000">20000 VND</option>
+            <option value="30000">30000 VND</option>
+        </select>
+    </div>
+    <div>
+        <button type="button" onclick="tinhHoaHong()">Tính tiền</button>
+    </div>
+    <span id="result"></span>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        //Bài 6: In hình trái tim
+        function dspTraiTim() {
+            let a, b, size = 15;
+            for (a = size/2; a <= size; a = a+2) {
+                for (b = 1; b < size-a; b = b+2)
+                    document.writeln("&ensp;");
+                for (b = 1; b <= a; b++)
+                    document.writeln("*");
+                for (b = 1; b <= size-a; b++)
+                    document.writeln("&ensp;");
+                for (b = 1; b <= a-1; b++)
+                    document.writeln("*");
+                document.writeln("<br>");
+            }
+
+            /*FOR THE BASE OF HEART ie. THE INVERTED TRIANGLE */
+            for (a = size; a >= 0; a--) {
+                for (b = a; b < size; b++)
+                    document.writeln("&ensp;");
+                for (b = 1; b <= ((a * 2) - 1); b++)
+                    document.writeln("*");
+                document.writeln("<br>");
+            }
+        }
+        window.onload = dspTraiTim;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

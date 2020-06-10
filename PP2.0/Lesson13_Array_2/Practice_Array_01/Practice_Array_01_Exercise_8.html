@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+        let arrInt = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, 12, 13, -14, 15, -16, 17, 18, 19, 20];
+        document.write("Mang truoc khi sap xep: " + arrInt.join(","));
+        for (let i=0; i<arrInt.length;i++) {
+            for (let j=i; j<arrInt.length-1;j++){
+                if(arrInt[i]<arrInt[j+1]){
+                    let temp = arrInt[i];
+                    arrInt[i] = arrInt[j+1];
+                    arrInt[j+1] = temp;
+                }
+            }
+        }
+        document.write("</br>Mang sau khi sap xep: " + arrInt.join(","));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

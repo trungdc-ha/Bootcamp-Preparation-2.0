@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+        let arrInt = [1,8,10,99,100,15,88,66,555,21,78,20];
+        let max = arrInt[0];
+        let index = 0;
+        for(let i in arrInt){
+            if(arrInt[i]>max){
+                max = arrInt[i];
+                index = i;
+            }
+        }
+        document.write("So lon nhat: "+max + " co index la: "+index);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

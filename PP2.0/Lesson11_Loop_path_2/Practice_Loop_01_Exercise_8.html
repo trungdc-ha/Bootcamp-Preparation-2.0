@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        //Bài 8: Game đoán số
+        function game() {
+            let canDuoi = parseInt(prompt("Nhap can duoi: "));
+            let canTren = parseInt(prompt("Nhap can tren: "));
+            let result = Math.floor((Math.random() * (canTren - canDuoi) + canDuoi));
+            console.log(result);
+            let i = 1;
+            let inputNum = parseInt(prompt("Nhap so du doan: "));
+            do {
+                if (inputNum > result) {
+                    inputNum = parseInt(prompt("Ban nhap so lon hon, còn " + (3 - i) + " lan nhap: "));
+                    i++;
+                } else if (inputNum < result) {
+                    inputNum = parseInt(prompt("Ban nhap so nho hon, còn " + (3 - i) + " lan nhap: "));
+                    i++;
+                } else {
+                    alert("ban da doan chinh xac.");
+                    break;
+                }
+            } while (i < 3);
+        }
+
+        window.onload = game;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

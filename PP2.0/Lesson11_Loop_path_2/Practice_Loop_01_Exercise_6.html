@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum 30 so chia het cho 7</title>
+    <script type="application/javascript">
+        //Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+        function sum30() {
+            let sum = 0;
+            let stn = 0;
+            let i = 0;
+            let text = "";
+            do{
+                if (stn%7===0){
+                    sum +=stn;
+                    text += stn +" ";
+                    i++;
+                    console.log(stn);
+                }
+                stn++;
+            } while (i<30)
+            document.getElementById("result").innerHTML = "30 so số chia hết cho 7 đầu tiên trong các số tự nhiên: " + text +"</br>Sum: "+ sum;
+        }
+
+        window.onload = sum30;
+    </script>
+</head>
+<body>
+<span id="result"></span>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+        let str1 = prompt("Nhap chuoi 1: ");
+        let str2 = prompt("Nhap chuoi 2: ");
+        let arrStr1 = Array.from(str1);
+        let arrStr2 = Array.from(str2);
+        let flgCheck = true;
+        if(arrStr1.length==arrStr2.length){
+            for (let i in arrStr1){
+                if(arrStr1[i] != arrStr2[i]){
+                    flgCheck = false;
+                }
+            }
+        } else {
+            flgCheck = false;
+        }
+        document.write("str1: "+str1);
+        document.write("</br>str2: "+str2);
+        if(flgCheck){
+            document.write("</br>Hai chuoi giong nhau.")
+        } else {
+            document.write("</br>Hai chuoi khac nhau.")
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

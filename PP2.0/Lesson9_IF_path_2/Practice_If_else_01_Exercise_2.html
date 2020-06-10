@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+    <script type="application/javascript">
+        /*Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.*/
+        function checkTuoi() {
+            let input_tuoi = prompt("Nhap tuoi cua hoc sinh:");
+            let tuoiHS = parseInt(input_tuoi);
+            if(tuoiHS > 15){
+                alert("Đủ tuổi học lớp 10.");
+            } else {
+                alert("Không đủ tuổi học lớp 10")
+            }
+        }
+        window.onload = checkTuoi;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

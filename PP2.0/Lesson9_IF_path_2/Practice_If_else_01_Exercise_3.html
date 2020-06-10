@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice If else 01 Exercise_3</title>
+    <script type="application/javascript">
+        //Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+        function checkSoNguyen() {
+            let input_soNguyen = prompt("Nhap so nguyen bat ki:");
+            let soNguyen = parseFloat(input_soNguyen);
+            if(soNguyen > 0){
+                alert("So nguyen vua nhap: "+soNguyen+" lon hon khong.");
+            } else if (soNguyen < 0){
+                alert("So nguyen vua nhap: "+soNguyen+" nho hon khong.");
+            } else {
+                alert("So nguyen vua nhap: "+soNguyen+" bang khong.");
+            }
+        }
+        window.onload = checkSoNguyen;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

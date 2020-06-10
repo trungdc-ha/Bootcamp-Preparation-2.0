@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        // Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi suất hàng tháng Tiền lãi = Số tiền gửi x Lãi suất (% năm)/12
+
+        let tienGoi = parseFloat(prompt("Nhập số tiền gởi: "));
+        let thang = parseInt(prompt("Nhap so thang: "));
+        let laiSuat = parseInt(prompt("Nhap lai suat: "));
+        let tienLai = tienGoi * (laiSuat / 100) / thang;
+
+        document.write("Tien Lai: " + tienLai);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

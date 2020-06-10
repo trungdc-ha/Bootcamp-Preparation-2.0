@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci </title>
+    <script type="application/javascript">
+        function dspFibonacci() {
+            let text = "0, 1";
+            let seed1 = 0;
+            let seed2 = 1;
+            let seed3;
+            for (let i = 0; i < 18; i++) {
+                seed3 = seed1 + seed2;
+                text += ", "+seed3;
+                seed1 = seed2;
+                seed2 = seed3;
+            }
+            document.getElementById("result").innerText = text;
+        }
+
+        function dspFibonacc2() {
+            let num = parseInt(prompt("Nhap so n: "));
+            let text = "";
+            for (let i = 0; i<num; i++){
+                text += getFibonacci(i) + " ";
+            }
+            document.getElementById("result").innerText = text;
+        }
+
+        function getFibonacci(n) {
+            if (n ===0 || n ===1){
+                return n;
+            } else {
+                return (getFibonacci(n-2) + getFibonacci(n-1)) ;
+            }
+        }
+
+        window.onload = dspFibonacc2;
+    </script>
+</head>
+<body>
+    <span id="result"></span>
+</body>
+</html>

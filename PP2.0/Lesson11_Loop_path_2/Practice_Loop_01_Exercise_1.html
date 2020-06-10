@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count 1 to 100</title>
+    <script type="application/javascript">
+        //Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+        function countNumber() {
+            let text = "";
+            for (let i=1;i<=100;i++){
+                if(i === 99){
+                    alert("OK");
+                } else {
+                    text += i +"</br>";
+                }
+            }
+            document.getElementById("result").innerHTML = text;
+        }
+        window.onload = countNumber;
+    </script>
+</head>
+<body>
+    <span id="result"></span>
+</body>
+</html>

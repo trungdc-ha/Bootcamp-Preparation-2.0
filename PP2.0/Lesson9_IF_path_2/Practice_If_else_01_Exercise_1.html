@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+    <script type="application/javascript">
+        /*Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không*/
+        function a_chiaHetCho_b() {
+            let input_a = prompt("Nhap so A:");
+            let input_b = prompt("Nhap so B:");
+            let a = parseFloat(input_a);
+            let b = parseFloat(input_b);
+            if(a%b == 0){
+                alert("a chia het cho b");
+            } else {
+                alert("a khong chia het cho b")
+            }
+        }
+        window.onload = a_chiaHetCho_b;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

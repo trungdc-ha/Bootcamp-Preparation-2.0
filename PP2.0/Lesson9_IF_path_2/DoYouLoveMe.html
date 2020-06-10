@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do You Love Me</title>
+    <style type="text/css">
+        #btnNo {
+            position: relative;
+        }
+    </style>
+    <script type="application/javascript">
+        function yes(){
+            alert("Thanks, I love you.")
+        }
+        function no() {
+            let numberRandom = Math.random();
+            let height = window.innerHeight;
+            let width = window.innerWidth;
+            let btnNo = document.getElementById("btnNo");
+            console.log(numberRandom*width)
+            btnNo.style.left = (numberRandom*width)+"px";
+            btnNo.style.top = (numberRandom*height)+"px";
+        }
+    </script>
+</head>
+<body>
+<h1>Do You Love Me ?</h1>
+<button type="button" onclick="yes()">Yes</button>
+<button type="button" onmouseover="no()" id="btnNo" class="styleBtnNo">No</button>
+</body>
+</html>

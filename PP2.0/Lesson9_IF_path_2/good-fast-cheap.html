@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>good fast cheap</title>
+    <script type="application/javascript">
+        function checkStatus(status){
+            let cbGood = document.getElementById("good").checked;
+            let cbFast = document.getElementById("fast").checked;
+            let cbCheap = document.getElementById("cheap").checked;
+            console.log(cbGood +" " +cbFast+ " "+ cbCheap);
+            if(status === "good"){
+                if(cbFast && cbCheap){
+                    document.getElementById("fast").checked = false;
+                }
+            }
+            if (status === "fast"){
+                if(cbGood && cbCheap){
+                    document.getElementById("cheap").checked = false;
+                }
+            }
+            if (status === "cheap"){
+                if(cbGood && cbFast){
+                    document.getElementById("good").checked = false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input type="checkbox" value="good" id="good" onclick="checkStatus('good')">Good
+</div>
+<div>
+    <input type="checkbox" value="fast" id="fast" onclick="checkStatus('fast')">Fast
+</div>
+<div>
+    <input type="checkbox" value="cheap" id="cheap" onclick="checkStatus('cheap')">Cheap
+</div>
+</body>
+</html>

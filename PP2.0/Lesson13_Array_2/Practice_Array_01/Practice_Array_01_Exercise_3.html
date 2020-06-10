@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
+        let arrInt = [1,8,10,99,100,15,88,66,555,21,78,20];
+        let max = arrInt[0];
+        let sum = 0;
+        for(let i in arrInt){
+            if(arrInt[i]>max){
+                max = arrInt[i];
+            }
+            sum +=arrInt[i];
+        }
+        document.write("So lon nhat: "+max + " gia tri trung binh cua mang : "+(sum/arrInt.length));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

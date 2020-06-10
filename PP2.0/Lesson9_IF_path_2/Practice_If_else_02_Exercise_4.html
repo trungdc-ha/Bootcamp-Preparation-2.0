@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        //Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.
+        function dienTichHCN() {
+            let a = parseFloat(document.getElementById("canh_a").value);
+            let b = parseFloat(document.getElementById("canh_b").value);
+            let dienTich = a*b;
+            document.getElementById("result").innerText ="Dien tich hinh chu nhat la: "+ dienTich;
+        }
+    </script>
+</head>
+<body>
+    <div>Nhập cạnh a:</div>
+    <div>
+        <input type="text" id="canh_a" value="0">
+    </div>
+    <div>Nhập cạnh b:</div>
+    <div>
+        <input type="text" id="canh_b" value="0">
+    </div>
+    <div><button type="button" onclick="dienTichHCN()">Tinh Dien Tich</button></div>
+    <div><span id="result"></span></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        //Bài 2: Chuyển từ mét sang feet
+        function convertToFoot() {
+            let metre = parseFloat(document.getElementById("metre").value);
+            let feet = metre*3.2808;
+            document.getElementById("result").innerText = feet +"feet";
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input type="text" style="width: 50px;" value="1" onchange="convertToFoot()" id="metre">m to <span id="result">3.28084feet</span>
+</div>
+</body>
+</html>

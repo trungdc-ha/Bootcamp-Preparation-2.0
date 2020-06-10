@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum 20 Fibonacci</title>
+    <script type="application/javascript">
+        //Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+        function dspFibonacci() {
+            let sum = 1;
+            let seed1 = 0;
+            let seed2 = 1;
+            let seed3;
+            for (let i = 0; i < 18; i++) {
+                seed3 = seed1 + seed2;
+                seed1 = seed2;
+                seed2 = seed3;
+
+                sum += seed3
+            }
+            document.getElementById("result").innerText = "Tong 20 so Finacci dau tien: " + sum;
+        }
+
+        window.onload = dspFibonacci;
+    </script>
+</head>
+<body>
+<span id="result"></span>
+</body>
+</html>

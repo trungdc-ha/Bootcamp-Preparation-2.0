@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        function dspHinhCN() {
+            for (let i = 1; i <= 7; i++) {
+                for (let j = 1; j <= 20; j++) {
+                    if (i === 1 || j === 1 || i === 7 || j === 20) {
+                        document.writeln("*");
+                    } else {
+                        document.writeln("&ensp;");
+                    }
+                }
+                document.writeln("<br>");
+            }
+        }
+
+        window.onload = dspHinhCN;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

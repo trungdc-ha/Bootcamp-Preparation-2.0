@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        //Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+        function dspShow(){
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    if (i >= j) {
+                        document.writeln("*");
+                    } else {
+                        document.writeln("&ensp;");
+                    }
+                }
+                document.write("<br>");
+            }
+
+            document.write("<br>");
+
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 5; j >= 1; j--) {
+                    if (j >= i) {
+                        document.writeln("*");
+                    } else {
+                        document.writeln("&ensp;");
+                    }
+                }
+                document.write("<br>");
+            }
+
+            document.write("<br>");
+
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 5; j >= 1; j--) {
+                    if (j > i) {
+                        document.writeln("&ensp;");
+                    } else {
+                        document.writeln("*");
+                    }
+                }
+                document.write("<br>");
+            }
+
+            document.write("<br>");
+
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    if (i > j) {
+                        document.writeln("&ensp;");
+                    } else {
+                        document.writeln("*");
+                    }
+                }
+                document.write("<br>");
+            }
+        }
+        window.onload = dspShow;
+    </script>
+</head>
+<body>
+<span id="result"></span>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 6: Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+        let str1 = prompt("Nhap chuoi 1: ");
+        let arrStr1 = Array.from(str1);
+        document.write("str1: " + str1);
+        for (let i in arrStr1) {
+            if (arrStr1[i] === "-") {
+                arrStr1[i] = "_";
+            }
+        }
+        document.write("</br>str1: " + arrStr1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

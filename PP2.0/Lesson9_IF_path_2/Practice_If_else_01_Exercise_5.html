@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice If else 01 Exercise_5</title>
+    <script type="application/javascript">
+        //Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+        function xepLoai() {
+            let baiKiemTra = parseFloat(document.getElementById("baiKiemTra").value);
+            let giuaKy = parseFloat(document.getElementById("giuaKy").value);
+            let cuoiKy = parseFloat(document.getElementById("cuoiKy").value);
+            let diemTB = (baiKiemTra + giuaKy*2 + cuoiKy*3)/6;
+            let xepLoai;
+            if (diemTB >=9 ){
+                xepLoai = "xuất sắc";
+            } else if(diemTB >= 8) {
+                xepLoai = "giỏi";
+            } else if(diemTB >= 7){
+                xepLoai = "khá";
+            } else if(diemTB >= 6){
+                xepLoai = "trung bình";
+            } else if(diemTB >= 5){
+                xepLoai = "yếu";
+            } else {
+                xepLoai = "kém";
+            }
+            document.getElementById("result").innerText = (diemTB + " xếp loại học sinh: "+ xepLoai);
+        }
+    </script>
+</head>
+<body>
+    <div>Nhập điểm bài kiểm tra:</div>
+    <div>
+        <input type="text" id="baiKiemTra">
+    </div>
+    <div>Nhập điểm thi giữa kỳ:</div>
+    <div>
+        <input type="text" id="giuaKy">
+    </div>
+    <div>Nhập điểm thi cuối kỳ:</div>
+    <div>
+        <input type="text" id="cuoiKy">
+    </div>
+    <div>
+        <button type="button" onclick="xepLoai()">Tính Điểm</button>
+    </div>
+    <span id="result"></span>
+</body>
+</html>

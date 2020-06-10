@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+    <script type="application/javascript">
+        let arrEng = ["people","history","way","world","information","map","health"];
+        let arrVN = ["người","lịch sử","đường","thế giới","thông tin","bản đồ","sức khỏe"];
+        function SearchKeyWord() {
+            let keyWord = document.getElementById("inputEng").value;
+            let status = false;
+            for (let i=0;i<arrEng.length;i++){
+                if(keyWord == arrEng[i]){
+                    document.getElementById("result").innerText = keyWord + " to VietNamese is: "+arrVN[i];
+                    status = true;
+                    break;
+                }
+            }
+            if (status == false){
+                document.getElementById("result").innerText = "không tìm thấy từ đồng nghĩa với: " +keyWord;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div>
+    Nhap tu tieng anh can tim:<input type="text" id="inputEng">
+</div>
+<div>
+    <button type="button" onclick="SearchKeyWord()">Tim kiem</button>
+</div>
+<div id="result"></div>
+</body>
+</html>
