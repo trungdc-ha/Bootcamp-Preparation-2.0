@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let number = parseInt(prompt("Nhap so tu nhien >0: "));
+        let flag = true;
+        if (number === 1) flag = false;
+        for (let i = 2;
+             i < Math.sqrt(number);
+             i++
+        ) {
+            if (number % i == 0) {
+                flag = false;
+            }
+        }
+        if (flag) {
+            document.write("so " + number + ' la so nguyen to.')
+        } else {
+            document.write("so " + number + ' khong phai la so nguyen to.')
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

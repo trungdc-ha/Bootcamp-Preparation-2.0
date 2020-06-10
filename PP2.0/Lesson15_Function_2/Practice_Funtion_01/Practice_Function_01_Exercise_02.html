@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.
+        //Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình.
+        function tangGiaTri(number){
+            number = parseInt(number);
+            number = number +1;
+            document.getElementById("result").innerText = "Tang 1 don vi: " + number;
+        }
+
+    </script>
+</head>
+<body>
+<div>
+    <input type="number" onchange="tangGiaTri(this.value)">
+</div>
+<div id="result"></div>
+</body>
+</html>

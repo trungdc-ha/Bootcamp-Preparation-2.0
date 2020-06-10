@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let ngoiSaoArr = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let chomSaoArr = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+        function layThongTinChomSao(ngoiSao) {
+
+            for (let i in ngoiSaoArr) {
+                if (ngoiSao.trim().toLowerCase() === ngoiSaoArr[i].toLowerCase()) {
+                    return chomSaoArr[i];
+                }
+            }
+            return "Khong tim thay";
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
