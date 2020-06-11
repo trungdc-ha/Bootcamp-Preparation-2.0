@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+        let inputChar = prompt("Nhap vao ki tu bat ki: ");
+        checkNumber(inputChar)
+
+        function checkNumber(char) {
+            if (isNaN(char)) {
+                document.write("Ki tu nhap vao: " + char + " khong phai la ki tu so.");
+            } else {
+                document.write("Ki tu nhap vao: " + char + " la ki tu so.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+        let inputArrNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        document.write("Array before swap value: " + inputArrNumber.join(","));
+        document.write("</br>Array after swap value: " + (swapPosition(inputArrNumber)).join(","));
+
+        function swapPosition(arrInput) {
+            let arrOutput = new Array();
+            for (let i = arrInput.length - 1; i >= 0; i--) {
+                arrOutput.push(arrInput[i]);
+            }
+            return arrOutput;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

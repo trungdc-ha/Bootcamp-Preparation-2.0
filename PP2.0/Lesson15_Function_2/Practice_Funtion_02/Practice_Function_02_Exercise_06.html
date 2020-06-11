@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.
+        let soNguyen = prompt("Nhap so nguyen bat ki: ");
+        if (checkNguyenDuong(soNguyen)) {
+            document.write("So nguyen vua nhap " + soNguyen + " la so nguyen duong.");
+        } else {
+            document.write("So nguyen vua nhap " + soNguyen + " khong phai la so nguyen duong.");
+        }
+
+        function checkNguyenDuong(soNguyen) {
+            if (soNguyen > 0) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

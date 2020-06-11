@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+        let r = parseInt(prompt("Nhap ban kinh cua hinh tron."));
+        document.write("Chu vi cua hình tron: "+tinhChuVi(r));
+        document.write("</br>Dien tich cua hinh tron: "+tinhDienTich(r));
+        function tinhChuVi(r) {
+            return Math.round(2*r*3.14);
+        }
+        function tinhDienTich(r) {
+            return Math.round(r*r*3.14);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

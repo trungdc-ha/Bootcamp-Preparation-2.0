@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+        let inputNumber_1 = parseInt(prompt("Enter number 1: "));
+        let inputNumber_2 = parseInt(prompt("Enter number 2: "));
+        let inputNumber_3 = parseInt(prompt("Enter number 3: "));
+        document.write("Min number is : "+minNumber(inputNumber_1, inputNumber_2, inputNumber_3));
+
+        function minNumber(number_1, number_2, number_3) {
+            if (number_1 < number_2 && number_1 < number_3) {
+                return number_1;
+            } else if (number_2 < number_1 && number_2 < number_3) {
+                return number_2;
+            } else {
+                return number_3;
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

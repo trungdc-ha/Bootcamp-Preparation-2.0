@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Management product</title>
+
+</head>
+<body>
+<div>Add new product</div>
+<div>
+    <input type="text" id="newProduct">
+    <button type="button" style="margin-left: 15px" onclick="addNewProduct();">Add</button>
+</div>
+<div id="result"></div>
+</body>
+<script>
+    let listProduct = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple Iphone 6s'];
+    let textHTML = "";
+
+    //Hien thi san pham
+    function showListProduct() {
+        document.getElementById("result").innerHTML = textHTML;
+
+        textHTML = "<table><thead>" +
+            "<tr>" +
+            "<th>No</th>" +
+            "<th>Product name</th>" +
+            "<th>Edit</th>" +
+            "<th>Delete</th>" +
+            "</tr>" +
+            "</thead><tbody>";
+        let count = 0;
+        for (let product in listProduct) {
+            textHTML += "<tr>" +
+                "<td>" + (count + 1) + "</td>" +
+                "<td>" + listProduct[product] + "</td>" +
+                "<td><button type='button' onclick='editProduct(" + count + ");'>Edit</button></td>" +
+                "<td><button type='button' onclick='deleteProduct(" + count + ");'>Delete</button></td>" +
+                "</tr>";
+            count++;
+        }
+        textHTML += "</tbody></table>";
+        document.getElementById("result").innerHTML = textHTML;
+    }
+
+    // add new san pham
+    function addNewProduct() {
+        let newProduct = document.getElementById("newProduct").value;
+        document.getElementById("newProduct").value = "";
+
+        listProduct.push(newProduct);
+        showListProduct();
+        alert("Add new product " + newProduct + " OK.");
+    }
+
+    function editProduct(idProduct) {
+        document.getElementById("result").innerHTML = textHTML;
+
+        textHTML = "<table><thead>" +
+            "<tr>" +
+            "<th>No</th>" +
+            "<th>Product name</th>" +
+            "<th>Edit</th>" +
+            "<th>Delete</th>" +
+            "</tr>" +
+            "</thead><tbody>";
+
+        for (let index = 0; index < listProduct.length; index++) {
+            if (index == idProduct) {
+                textHTML += "<tr>" +
+                    "<td>" + (index + 1) + "</td>" +
+                    "<td><input type='text' id='product_" + index + "' value='" + listProduct[index] + "'></td>" +
+                    "<td><button type='button' onclick='confirmUpdate(" + index + ");'>Apply</button></td>" +
+                    "<td><button type='button' disabled='disabled'>Delete</button></td>" +
+                    "</tr>";
+            } else {
+                textHTML += "<tr>" +
+                    "<td>" + (index + 1) + "</td>" +
+                    "<td>" + listProduct[index] + "</td>" +
+                    "<td><button type='button' disabled='disabled'>Edit</button></td>" +
+                    "<td><button type='button' disabled='disabled'>Delete</button></td>" +
+                    "</tr>";
+            }
+        }
+        textHTML += "</tbody></table>";
+        document.getElementById("result").innerHTML = textHTML;
+    }
+
+    function confirmUpdate(idProduct) {
+        console.log(idProduct);
+        listProduct[idProduct] = document.getElementById("product_" + idProduct).value;
+        showListProduct();
+    }
+
+    function deleteProduct(idProduct) {
+        if (confirm("Are you want delete product " + listProduct[idProduct])) {
+            listProduct.splice(idProduct,1);
+        }
+        showListProduct();
+    }
+
+    window.onload = showListProduct;
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+    <script>
+        let Temperature = function (_celsius) {
+            this.celsius = _celsius;
+
+            this.getCelsius = function () {
+                return this.celsius;
+            }
+            this.setCelsius = function (_celsius) {
+                this.celsius = _celsius;
+            }
+            this.convertCtoF = function () {
+                return (this.celsius * 9 / 5) + 32;
+            }
+            this.convertCtoK = function () {
+                return (this.celsius + 273.15);
+            }
+        }
+        let temCelsius = new Temperature(25);
+        document.write(temCelsius.getCelsius() + " celsius(C) convert to " + temCelsius.convertCtoF() + " Fahrenheit (F)");
+        document.write("</br>" + temCelsius.getCelsius() + " celsius(C) convert to " + temCelsius.convertCtoK() + " Kelvin (K)");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

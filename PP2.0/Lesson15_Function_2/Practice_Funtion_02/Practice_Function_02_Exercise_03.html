@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+        let n = parseInt(prompt("Nhap so nguyen n: "));
+        document.write("Giai thua cua " + n + " la " + tinhGiaiThua(n));
+
+        function tinhGiaiThua(n) {
+            let result = 1;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

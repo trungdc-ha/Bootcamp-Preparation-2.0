@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+</body>
+<script>
+    let Rectangle = function(_width, _height) {
+        this.width = _width;
+        this.height = _width;
+        this.getWidth = function () {
+            return this.width;
+        }
+        this.setWidth = function (_width) {
+            this.width = _width;
+        }
+        this.getHight = function () {
+            return this.height;
+        }
+        this.setHeight = function (_height) {
+            this.height = _height;
+        }
+        this.getArea = function () {
+            return this.width * this.height;
+        }
+        this.getPerimeter = function () {
+            return (this.width + this.height) * 2;
+        }
+    }
+    let test1 = new Rectangle(8,9);
+    document.write("Dien tich: "+test1.getArea());
+    document.write("</br>Chu Vi: "+test1.getPerimeter());
+</script>
+</html>

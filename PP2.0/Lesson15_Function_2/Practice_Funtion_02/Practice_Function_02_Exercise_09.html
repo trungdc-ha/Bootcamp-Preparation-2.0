@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
+        //kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+        let input_str = prompt("nhap chuoi ki tu:");
+        let input_char = prompt("nhap ki tu tim kiem: ");
+        document.write("Chuoi ki tu vua nhap: " + input_str);
+        let count = searchChar(input_str, input_char);
+        if (count === -1) {
+            document.write("</br>Ki tu '" + input_char + "' khong xuat hien trong chuoi.");
+        } else {
+            document.write("</br>Ki tu '" + input_char + "' xuat hien " + count + " lan.");
+        }
+
+
+        function searchChar(input_str, input_char) {
+            let arrayStr = Array.from(input_str);
+            let count = 0;
+            for (let i in arrayStr) {
+                if (arrayStr[i] === input_char) {
+                    count++;
+                }
+            }
+            if (count === 0) {
+                return -1;
+            }
+            return count;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

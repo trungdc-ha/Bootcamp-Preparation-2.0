@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+        let number_1 = prompt("Enter number one: ");
+        let number_2 = prompt("Enter number two: ");
+        let arrayNumber = [number_1,number_2];
+        document.write("Array before swap: "+arrayNumber.join(","));
+        document.write("</br>Array after swap: "+(swapPosition(arrayNumber)).join(","));
+
+        function swapPosition(arrayNumber) {
+            let numberTemp = arrayNumber[0];
+            arrayNumber[0] = arrayNumber[1];
+            arrayNumber[1] = numberTemp;
+            return arrayNumber
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
