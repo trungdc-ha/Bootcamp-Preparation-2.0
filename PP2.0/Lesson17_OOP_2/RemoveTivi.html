@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor(code) {
+            this.code = code;
+        }
+
+        connectTivi(tivi) {
+            this.tivi = tivi;
+        }
+
+        turnOnTivi() {
+            this.tivi.turnOn();
+        }
+
+        turnOffTivi() {
+            this.tivi.turnOff();
+        }
+
+        volumeUp() {
+            this.tivi.volumeUp();
+        }
+
+        volumeDown() {
+            this.tivi.volumeDown();
+        }
+
+        changeChannel(channel) {
+            this.tivi.changeChannel(channel);
+        }
+    }
+
+    class Tivi {
+        constructor(currentChannel, currentVolumn, status) {
+            this.currentChannel = currentChannel;
+            this.currentVolumn = currentVolumn;
+            this.status = status;
+        }
+
+        turnOn() {
+            this.status = "ON";
+            alert("Tivi on");
+        }
+
+        turnOff() {
+            this.status = "OFF";
+            alert("Tivi off");
+        }
+
+        volumeUp() {
+            this.currentVolumn++;
+            alert("The sound: " + this.currentVolumn);
+        }
+
+        volumeDown() {
+            this.currentVolumn--;
+            alert("The sound: " + this.currentVolumn);
+        }
+
+        changeChannel(channel) {
+            this.currentChannel = channel;
+            alert("Switch chanel " + channel);
+        }
+    }
+
+    let remote = new Remote("LG");
+    let tivi = new Tivi(8, 10, "OFF");
+    remote.connectTivi(tivi);
+    remote.turnOnTivi();
+    remote.changeChannel(9);
+    remote.changeChannel(6);
+    remote.volumeUp();
+    remote.volumeUp();
+    remote.turnOffTivi();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        class Apple {
+            constructor(weight) {
+                this.weight = weight;
+            }
+
+            getWeight() {
+                return this.weight;
+            }
+
+            decreaseWeight() {
+                if (this.weight > 0) {
+                    this.weight--;
+                }
+            }
+
+            isEmpty() {
+                if (this.weight == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        class Human {
+            constructor(name, gender, weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+
+            getName() {
+                return this.name;
+            }
+
+            getGender() {
+                return this.gender;
+            }
+
+            getWeight() {
+                return this.weight;
+            }
+
+            say() {
+                alert("I am " + this.name);
+            }
+
+            isMale() {
+                if (this.gender == "Male") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            eat(apple) {
+                if (apple.getWeight() > 0) {
+                    this.weight++;
+                    apple.decreaseWeight();
+                }
+            }
+
+            checkAppleWeight() {
+                return apple.getWeight();
+            }
+        }
+
+        let apple = new Apple(10);
+        apple.getWeight();
+        let adam = new Human("Adam", "Male", 60);
+        let eva = new Human("Eva", "Female", 50);
+        adam.say();
+        eva.say();
+        while (apple.isEmpty() == false) {
+            adam.eat(apple);
+            eva.eat(apple);
+        }
+        alert(adam.getWeight());
+        alert(eva.getWeight());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

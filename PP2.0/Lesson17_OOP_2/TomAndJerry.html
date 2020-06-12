@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(name, weight, speed, status) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = status;
+        }
+
+        say() {
+            document.write("Jerry say: Chit Chit")
+        }
+    }
+
+    class Cat {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+
+        say() {
+            document.write("</br>Tom say: Meo Meo")
+        }
+
+        catchRat(rat) {
+            if (this.speed > rat.speed) {
+                if (rat.status == "alive") {
+                    this.weight += rat.weight;
+                    rat.status = "dead";
+                    document.write("</br>Tom kiss Jerry. The weight of Tom is : " + this.weight);
+                }
+            }
+        }
+    }
+
+    let rat = new Rat("Jerry", 10, 20, "alive");
+    let cat = new Cat("Tom", 30, 30);
+    rat.say();
+    cat.say();
+    cat.catchRat(rat);
+    document.write("</br>Status of Jerry: " + rat.status)
+</script>
+</body>
+</html>
