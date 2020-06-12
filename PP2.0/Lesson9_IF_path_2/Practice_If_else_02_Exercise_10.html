@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 10: Viết chương trình tính giá điện.
+        let soDien = parseInt(prompt("Nhap so dien (kWh)"));
+        if (soDien <= 50) {
+            alert("Gia dien la: " + soDien * 1.678);
+        } else if (soDien <= 100) {
+            alert("Gia dien la: " + soDien * 1.734);
+        } else if (soDien <= 200) {
+            alert("Gia dien la: " + soDien * 2.014);
+        } else if (soDien <= 300) {
+            alert("Gia dien la: " + soDien * 2.536);
+        } else if (soDien <= 400) {
+            alert("Gia dien la: " + soDien * 2.834);
+        } else {
+            alert("Gia dien la: " + soDien * 2.927);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

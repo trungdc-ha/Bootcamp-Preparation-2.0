@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+        let soTien1 = parseInt(prompt("Nhap so tien ban dau"));
+        let soThang = parseInt(prompt("Nhap so thang cho vay"));
+        let r = parseInt(prompt("Nhap lai suat hang thang (%)"));
+        let soTien2 = soTien1 * Math.pow(1 + r / 100, soThang);
+        let soTienLai = soTien2.toFixed(2) - soTien1;
+        alert("Tien lai phai tra: " + soTienLai);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
