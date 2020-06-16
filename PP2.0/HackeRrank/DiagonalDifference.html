@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let arr = Array();
+        arr[0] = [9, 2, 3];
+        arr[1] = [1, 2, 3];
+        arr[2] = [1, 2, 3];
+
+        function diagonalDifference(arr) {
+            let left_to_right = 0;
+            let right_to_left = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length; j++) {
+                    if (i === j) {
+                        left_to_right += arr[i][j];
+                    }
+                    if ((i + j) == (arr.length - 1)) {
+                        right_to_left += arr[i][j];
+                    }
+                }
+            }
+            return Math.abs(left_to_right - right_to_left);
+        }
+
+        document.write(diagonalDifference(arr));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

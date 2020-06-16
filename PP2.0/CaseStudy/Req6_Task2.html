@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Req6 Task2</title>
+</head>
+<body>
+<script>
+    let arrEmployees = [];
+    class Employee {
+        constructor() {
+        }
+        setName (name) {
+            this.name = name;
+        }
+        getName () {
+            return this.name;
+        }
+        setBirthday (birthday) {
+            this.birthday = birthday;
+        }
+        getBirthday () {
+            return this.birthday;
+        }
+        setCmnd (cmnd) {
+            this.cmnd = cmnd;
+        }
+        getCmnd () {
+            return this.cmnd;
+        }
+        setPhoneNumber (phoneNumber) {
+            this.phoneNumber = phoneNumber;
+        }
+        getPhoneNumber () {
+            return this.phoneNumber;
+        }
+        setEmail (email) {
+            this.email = email;
+        }
+        getEmail () {
+            return this.email;
+        }
+        setEducationLevel (educationLevel) {
+            this.educationLevel = educationLevel;
+        }
+        getEducationLevel () {
+            return this.educationLevel;
+        }
+        setPosition (position) {
+            this.position = position;
+        }
+        getPosition () {
+            return this.position;
+        }
+        getSalary () {
+            if (this.getPosition() == "Manager") {
+                this.salary = 500;
+            } else if (this.getPosition() == "Sale") {
+                this.salary = 300;
+            } else if (this.getPosition() == "Marketing") {
+                this.salary = 200;
+            }
+            return this.salary;
+        }
+    }
+
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1. Add New Employee" + "\n"
+            + "2. Display Information Employee" + "\n"
+            + "3. Display Salary Of Employee" + "\n"
+            + "4. Exit"))
+        switch (choose) {
+            case 1: {
+                addNewEmployee();
+                break;
+            }
+            case 2: {
+                displayEmployee();
+                break;
+            }
+            case 3: {
+                displaySalary();
+                break;
+            }
+            case 4: {
+                break;
+            }
+            default: {
+                alert("Failed");
+                displayMainMenu()
+            }
+        }
+    }
+    displayMainMenu();
+
+    function addNewEmployee() {
+        let employee = new Employee();
+        let name = prompt("Input your name: ");
+        let birthday = prompt("Input your birthday: ");
+        let cmnd = prompt("Input your cmnd: ");
+        let phoneNumber = prompt("Input your phone number: ");
+        let email = prompt("Input your email: ");
+        let educationLevel = prompt("Input your education level: ");
+        let position = prompt("Input your position: ");
+        employee.setName(name);
+        employee.setBirthday(birthday);
+        employee.setCmnd(cmnd);
+        employee.setPhoneNumber(phoneNumber);
+        employee.setEmail(email);
+        employee.setEducationLevel(educationLevel);
+        employee.setPosition(position);
+        arrEmployees.push(employee);
+        alert("Successfully added a new employee");
+        displayMainMenu();
+    }
+    function displayEmployee() {
+        let temp = "";
+        for (let i = 0; i < arrEmployees.length; i++) {
+            temp += (i+1) + ". Employee Name: " + arrEmployees[i].getName() + "\n";
+        }
+        let chooseEmployeeToDisplay = prompt("Choose employee to display: " + "\n" + temp);
+        alert("Name: " + arrEmployees[chooseEmployeeToDisplay-1].getName() + "\n" +
+            "Birthday: " + arrEmployees[chooseEmployeeToDisplay-1].getBirthday() + "\n" +
+            "Cmnd: " + arrEmployees[chooseEmployeeToDisplay-1].getCmnd() + "\n" +
+            "Phone number: " + arrEmployees[chooseEmployeeToDisplay-1].getPhoneNumber() + "\n" +
+            "Email: " + arrEmployees[chooseEmployeeToDisplay-1].getEmail() + "\n" +
+            "Education level: " + arrEmployees[chooseEmployeeToDisplay-1].getEducationLevel() + "\n" +
+            "Position: " + arrEmployees[chooseEmployeeToDisplay-1].getPosition() + "\n" +
+            "Salary: " + arrEmployees[chooseEmployeeToDisplay-1].getSalary());
+        displayMainMenu();
+    }
+</script>
+</body>
+</html>

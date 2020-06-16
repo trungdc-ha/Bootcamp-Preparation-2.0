@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // Complete the aVeryBigSum function below.
+        function aVeryBigSum(ar) {
+            let sum = 0;
+            for (let i in ar) {
+                sum += ar[i];
+            }
+            return sum;
+
+        }
+
+        let ar = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005];
+        let result = aVeryBigSum(ar);
+        document.write(result + "\n");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

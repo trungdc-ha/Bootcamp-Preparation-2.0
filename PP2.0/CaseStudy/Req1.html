@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Req 1</title>
+</head>
+<body>
+<script>
+    let name = prompt("Input your name: ");
+    let cmnd = prompt("Input your cmnd: ");
+    let birthday = prompt("Input your birthday: ");
+    let email = prompt("Input your email: ");
+    let address = prompt("Input your address: ");
+    let typeCustomer = prompt("Input type customer: ");
+    let discount = prompt("Input your discount: ");
+    let quantityIncluded = prompt("Input quantity included: ");
+    let rentDays = prompt("Input your rent days: ");
+    let typeService = prompt("Input your type service: ");
+    let typeRoom = prompt("Input your type room: ");
+    let typeServicePrice;
+
+    switch (typeService) {
+            case "Villa": {
+                typeServicePrice = 500;
+                break;
+            }
+            case "House": {
+                typeServicePrice = 300;
+                break;  
+            }   
+            case "Room": {
+                typeServicePrice = 100;  
+                break;
+            }       
+    }
+    let totalPay = typeServicePrice * rentDays * (1 - discount/100);
+
+    alert("Name: " + name + "\n" +
+         "Cmnd: " + cmnd + "\n" +
+         "Birthday: " + birthday + "\n" +
+         "Email: " + email + "\n" +
+         "Address: " + address + "\n" +
+         "Customer type: " + typeCustomer + "\n" +
+         "Discount: " + discount + "\n" +
+         "Quantity: " + quantityIncluded + "\n" +
+         "Rent days: " + rentDays + "\n" +
+         "Service type: " + typeService + "\n" +
+         "Room type: " + typeRoom + "\n" +
+         "Total pay: " + totalPay);
+</script>
+
+</body>
+</html>

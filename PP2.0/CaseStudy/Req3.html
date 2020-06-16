@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Req 3</title>
+</head>
+<body>
+<script>
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let discount;
+    let rentDays;
+    let quantityIncluded;
+    let address;
+    let typeCustomer;
+
+
+    let check = false;
+
+    name = prompt("Input your name: ");
+    name = name.trim().toLowerCase();
+    let tempName = "";
+    for (let i = 0; i < name.length; i++) {
+        if (name.charAt(i) == " " && name.charAt(i+1) == " ") {
+            continue;
+        }
+        if (i == 0 || name.charAt(i-1) == " ") {
+            tempName += name.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName += name.charAt(i);
+    }
+    name = tempName;
+
+    do {
+        cmnd = parseFloat(prompt("Input your cmnd: "));
+        if (!isNaN(cmnd)) {
+            if (Number.isInteger(cmnd)) {
+                if(cmnd.toString().length == 8) {
+                    check = true;
+                } else {
+                    alert("Cmnd ban nhap sai dinh dang.");
+                }
+            } else {
+                alert("Cmnd ban nhap sai dinh dang.");
+            }
+        } else {
+            alert("Cmnd ban nhap sai dinh dang.");
+        }
+    } while (!check);
+    check = false;
+    
+    do {
+        birthday = prompt("Input your birthday: ");
+        if (birthday.charAt(2) == "/" && birthday.charAt(5) == "/") {
+            let day = birthday.substring(0,2);
+            let month = birthday.substring(3,5);
+            let year = birthday.substring(6,10);
+            if (!isNaN(day) &&! isNaN(month) && !isNaN(year)) {
+                day = Number.parseFloat(day);
+                month = Number.parseFloat(month);
+                year = Number.parseFloat(year);
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day<32 && month < 13 && year < 2020 && year > 1950) {
+                        check = true;
+                    }
+                }
+
+            }
+        }
+        if (!check) {
+            alert("Ngay sinh khong dung dinh dang")
+        }
+    } while (!check);
+    check = false;
+
+    do {
+        email = prompt("Input your email: ");
+        let count1 = 0;
+        let count2 = 0;
+        for (let i = 0; i < email.length; i++) {
+            if (email.charAt(i) == "@") {
+                count1 ++;
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(j) == ".") {
+                        count2 ++;
+                    }
+                }
+            }
+        }
+        if (count1 != 1 || count2 <1) {
+            alert ("Email ban nhap sai dinh dang")
+        } else {
+            check = true;
+        }
+    } while (!check);
+    check = false;
+
+    do {
+        discount = prompt("Input your discount: ");
+        if (!isNaN(discount)) {
+            discount = parseFloat(discount);
+            if (Number.isInteger(discount) && discount > 0) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert ("Ma giam gia sai dinh dang")
+        }
+    } while (!check);
+    check = false;
+
+    address = prompt("Input your address: ");
+    address = address.trim().toLowerCase();
+    let tempAddress = "";
+    for (let i = 0; i < address.length; i++) {
+        if (address.charAt(i) == " " && address.charAt(i+1) == " ") {
+            continue;
+        }
+        if (i == 0 || address.charAt(i-1) == " ") {
+            tempAddress += address.charAt(i).toUpperCase();
+            continue;
+        }
+        tempAddress += address.charAt(i);
+    }
+    address = tempAddress;
+
+    typeCustomer = prompt("Input type customer: ");
+    typeCustomer = typeCustomer.trim().toLowerCase();
+    let tempTypeCustomer = "";
+    for (let i = 0; i < typeCustomer.length; i++) {
+        if (typeCustomer.charAt(i) == " " && typeCustomer.charAt(i+1) == " ") {
+            continue;
+        }
+        if (i == 0 || typeCustomer.charAt(i-1) == " ") {
+            tempTypeCustomer += typeCustomer.charAt(i).toUpperCase();
+            continue;
+        }
+        tempTypeCustomer += typeCustomer.charAt(i);
+    }
+    typeCustomer = tempTypeCustomer;
+
+    do {
+        quantityIncluded = prompt("Input quantity included: ");
+        if (!isNaN(quantityIncluded)) {
+            quantityIncluded = parseFloat(quantityIncluded);
+            if (Number.isInteger(quantityIncluded) && discount > 0) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert ("So nguoi di kem sai dinh dang")
+        }
+    } while (!check);
+    check = false;
+  
+    do {
+        rentDays = prompt("Input your rent days: ");
+        if (!isNaN(rentDays)) {
+            rentDays = parseFloat(rentDays);
+            if (Number.isInteger(rentDays) && discount > 0) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert ("So ngay thue sai dinh dang")
+        }
+    } while (!check);
+    check = false;
+
+    let typeService = prompt("Input your type service: ");
+    let typeRoom = prompt("Input your type room: ");
+    let typeServicePrice;
+
+    switch (typeService) {
+            case "Villa": {
+                typeServicePrice = 500;
+                break;
+            }
+            case "House": {
+                typeServicePrice = 300;
+                break;  
+            }   
+            case "Room": {
+                typeServicePrice = 100;  
+                break;
+            }       
+    }
+    let totalPay = typeServicePrice * rentDays * (1 - discount/100);
+
+    alert("Name: " + name + "\n" +
+         "Cmnd: " + cmnd + "\n" +
+         "Birthday: " + birthday + "\n" +
+         "Email: " + email + "\n" +
+         "Address: " + address + "\n" +
+         "Customer type: " + typeCustomer + "\n" +
+         "Discount: " + discount + "\n" +
+         "Quantity: " + quantityIncluded + "\n" +
+         "Rent days: " + rentDays + "\n" +
+         "Service type: " + typeService + "\n" +
+         "Room type: " + typeRoom + "\n" +
+         "Total pay: " + totalPay);
+</script>
+
+</body>
+</html>

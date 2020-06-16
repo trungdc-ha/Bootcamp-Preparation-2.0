@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compare the Triplets</title>
+    <script>
+        let array_A = [1, 8, 3, 4, 5, 6, 7, 8, 9, 10];
+        let array_B = [8, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let point = [0, 0];
+
+
+        function compareTriplets(a, b) {
+            for (let i in a) {
+                if (a[i] > b[i]) {
+                    point[0]++;
+                } else if (a[i] < b[i]) {
+                    point[1]++;
+                }
+            }
+        }
+        compareTriplets(array_A, array_B);
+        document.write(point.join(","))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Req 5</title>
+</head>
+<body>
+<script>
+    let arrListCustomers = [];
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1. Add New Customer" + "\n"
+            + "2. Display Information Customer" + "\n"
+            + "3. Edit Information Customer" + "\n"
+            + "4. Delete Customer" + "\n"
+            + "5. Exit"))
+        switch (choose) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 2: {
+                displayCustomer();
+                break;
+            }
+            case 3: {
+                editCustomer();
+                break;
+            }
+            case 4: {
+                deleteCustomer();
+                break;
+            }
+            case 5: {
+                break;
+            }
+
+        }
+    }
+    displayMainMenu();
+
+    function addNewCustomer() {
+        let name = prompt("Input your name: ");
+        let cmnd = prompt("Input your cmnd: ");
+        let birthday = prompt("Input your birthday: ");
+        let email = prompt("Input your email: ");
+        let address = prompt("Input your address: ");
+        let typeCustomer = prompt("Input type customer: ");
+        let discount = prompt("Input your discount: ");
+        let quantityIncluded = prompt("Input quantity included: ");
+        let rentDays = prompt("Input your rent days: ");
+        let typeService = prompt("Input your type service: ");
+        let typeRoom = prompt("Input your type room: ");
+
+        let arrCustomerInfo = [];
+        arrCustomerInfo.push(name);
+        arrCustomerInfo.push(cmnd);
+        arrCustomerInfo.push(birthday);
+        arrCustomerInfo.push(email);
+        arrCustomerInfo.push(address);
+        arrCustomerInfo.push(typeCustomer);
+        arrCustomerInfo.push(discount);
+        arrCustomerInfo.push(quantityIncluded);
+        arrCustomerInfo.push(rentDays);
+        arrCustomerInfo.push(typeService);
+        arrCustomerInfo.push(typeRoom);
+        arrListCustomers.push(arrCustomerInfo);
+        alert("Successfully added a new customer")
+        displayMainMenu();
+    }
+
+    function displayCustomer() {
+        let temp = "";
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            temp += (i+1) + ". Name: " + arrListCustomers[i][0] + ". Cmnd: " + arrListCustomers[i][1] + "\n";
+        }
+        let chooseCustomerToDisplay = prompt("Choose customer to display: " + "\n" + temp + "\n" + "Back");
+        if (chooseCustomerToDisplay == "Back" || chooseCustomerToDisplay == "back") {
+            displayMainMenu();
+        } else {
+            alert("Name: " + arrListCustomers[chooseCustomerToDisplay-1][0] + "\n" +
+                "Cmnd: " + arrListCustomers[chooseCustomerToDisplay-1][1] + "\n" +
+                "Birthday: " + arrListCustomers[chooseCustomerToDisplay-1][2] + "\n" +
+                "Email: " + arrListCustomers[chooseCustomerToDisplay-1][3] + "\n" +
+                "Address: " + arrListCustomers[chooseCustomerToDisplay-1][4] + "\n" +
+                "Customer type: " + arrListCustomers[chooseCustomerToDisplay-1][5] + "\n" +
+                "Discount: " + arrListCustomers[chooseCustomerToDisplay-1][6] + "\n" +
+                "Quantity: " + arrListCustomers[chooseCustomerToDisplay-1][7] + "\n" +
+                "Rent days: " + arrListCustomers[chooseCustomerToDisplay-1][8] + "\n" +
+                "Service type: " + arrListCustomers[chooseCustomerToDisplay-1][9] + "\n" +
+                "Room type: " + arrListCustomers[chooseCustomerToDisplay-1][10]);
+            displayMainMenu();
+        }
+    }
+    
+    function editCustomer() {
+        let temp = "";
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            temp += (i+1) + ". Name: " + arrListCustomers[i][0] + ". Cmnd: " + arrListCustomers[i][1] + "\n";
+        }
+        let chooseCustomerToEdit = prompt("Choose customer to edit: " + "\n" + temp + "\n" + "Back");
+        if (chooseCustomerToEdit == "Back" || chooseCustomerToEdit == "back") {
+            displayMainMenu();
+        } else {
+            let chooseAttributeToEdit = parseInt(prompt("1. Name: " + arrListCustomers[chooseCustomerToEdit-1][0] + "\n" +
+                "2. CMND: " + arrListCustomers[chooseCustomerToEdit-1][1] + "\n" +
+                "3. Birthday: " + arrListCustomers[chooseCustomerToEdit-1][2] + "\n" +
+                "4. Email: " + arrListCustomers[chooseCustomerToEdit-1][3] + "\n" +
+                "5. Address: " + arrListCustomers[chooseCustomerToEdit-1][4] + "\n" +
+                "6. Type Customer: " + arrListCustomers[chooseCustomerToEdit-1][5] + "\n" +
+                "7. Discount: " + arrListCustomers[chooseCustomerToEdit-1][6] + "\n" +
+                "8. Quantity Included: " + arrListCustomers[chooseCustomerToEdit-1][7] + "\n" +
+                "9. Rent Days: " + arrListCustomers[chooseCustomerToEdit-1][8] + "\n" +
+                "10. Type Service: " + arrListCustomers[chooseCustomerToEdit-1][9] + "\n" +
+                "11. Type Room: " + arrListCustomers[chooseCustomerToEdit-1][10]));
+
+            switch (chooseAttributeToEdit) {
+                case 1: {
+                    arrListCustomers[chooseCustomerToEdit-1][0] = prompt("Edit your name");
+                    displayCustomer();
+                    break;
+                }
+                case 2: {
+                    arrListCustomers[chooseCustomerToEdit-1][1] = prompt("Edit your cmnd");
+                    displayCustomer();
+                    break;
+                }
+                case 3: {
+                    arrListCustomers[chooseCustomerToEdit-1][2] = prompt("Edit your birthday");
+                    displayCustomer();
+                    break;
+                }
+                case 4: {
+                    arrListCustomers[chooseCustomerToEdit-1][3] = prompt("Edit your email");
+                    displayCustomer();
+                    break;
+                }
+                case 5: {
+                    arrListCustomers[chooseCustomerToEdit-1][4] = prompt("Edit your address");
+                    displayCustomer();
+                    break;
+                }
+                case 6: {
+                    arrListCustomers[chooseCustomerToEdit-1][5] = prompt("Edit your type customer");
+                    displayCustomer();
+                    break;
+                }
+                case 7: {
+                    arrListCustomers[chooseCustomerToEdit-1][6] = prompt("Edit your discount");
+                    displayCustomer();
+                    break;
+                }
+                case 8: {
+                    arrListCustomers[chooseCustomerToEdit-1][7] = prompt("Edit your quantity");
+                    displayCustomer();
+                    break;
+                }
+                case 9: {
+                    arrListCustomers[chooseCustomerToEdit-1][8] = prompt("Edit your rent days");
+                    displayCustomer();
+                    break;
+                }
+                case 10: {
+                    arrListCustomers[chooseCustomerToEdit-1][9] = prompt("Edit your type service");
+                    displayCustomer();
+                    break;
+                }
+                case 11: {
+                    arrListCustomers[chooseCustomerToEdit-1][10] = prompt("Edit your type room");
+                    displayCustomer();
+                    break;
+                }
+                default: {
+                    alert("Failed");
+                }
+            }
+        }
+    }
+
+    function deleteCustomer() {
+        let temp = "";
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            temp += (i+1) + ". Name: " + arrListCustomers[i][0] + ". Cmnd: " + arrListCustomers[i][1] + "\n";
+        }
+        let chooseCustomerToDelete = prompt("Choose customer to delete: " + "\n" + temp + "\n" + "Back");
+        if (chooseCustomerToDelete == "Back" || chooseCustomerToDelete == "back") {
+            displayMainMenu();
+        } else {
+            let check = parseInt(prompt("Are you sure to delete customer: " + arrListCustomers[chooseCustomerToDelete-1][0] + "\n"
+                + "1. Yes" + "\n" + "2. No"));
+            if (check == 1) {
+                arrListCustomers.splice(chooseCustomerToDelete-1,1);
+                alert("Successfully deleted a customer")
+            } else {
+                alert("Cancel deleting.")
+            }
+        }
+        displayMainMenu()
+    }
+    alert()
+</script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Req6 Task1</title>
+</head>
+<body>
+<script>
+    let listCustomers = [];
+    let regexEmail = /\S+@\S+\.\S+/;
+    let regexDate = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+    let regexCmnd = /^[\d]{8,8}$/;
+    let regexNumber = /^\d+$/;
+    class Customer {
+        constructor() {
+        }
+        setName (name) {
+            this.name = name;
+        }
+        getName () {
+            return this.name;
+        }
+        setCmnd (cmnd) {
+            this.cmnd = cmnd;
+        }
+        getCmnd () {
+            return this.cmnd;
+        }
+        setBirthday (birthday) {
+            this.birthday = birthday;
+        }
+        getBirthday () {
+            return this.birthday;
+        }
+        setEmail (email) {
+            this.email = email;
+        }
+        getEmail () {
+            return this.email;
+        }
+        setAddress (address) {
+            this.address = address;
+        }
+        getAddress () {
+            return this.address;
+        }
+        setTypeCustomer (typeCustomer) {
+            this.typeCustomer = typeCustomer;
+        }
+        getTypeCustomer () {
+            return this.typeCustomer;
+        }
+        setDiscount (discount) {
+            this.discount = discount;
+        }
+        getDiscount () {
+            return this.discount;
+        }
+        setQuantityIncluded (quantityIncluded) {
+            this.quantityIncluded = quantityIncluded;
+        }
+        getQuantityIncluded () {
+            return this.quantityIncluded;
+        }
+        setRentDays (rentDays) {
+            this.rentDays = rentDays;
+        }
+        getRentDays () {
+            return this.rentDays;
+        }
+        setTypeService (typeService) {
+            this.typeService = typeService;
+        }
+        getTypeService () {
+            return this.typeService;
+        }
+        setTypeRoom (typeRoom) {
+            this.typeRoom = typeRoom;
+        }
+        getTypeRoom () {
+            return this.typeRoom;
+        }
+        calculateTotalPay () {
+            let typeServicePrice = 0;
+            switch (this.getTypeService()) {
+                case "Villa": {
+                    typeServicePrice = 500;
+                    break;
+                }
+                case "House": {
+                    typeServicePrice = 300;
+                    break;
+                }
+                case "Room": {
+                    typeServicePrice = 100;
+                    break;
+                }
+            }
+            return typeServicePrice * this.getRentDays() * (1 - this.getDiscount()/100);
+        }
+    }
+
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1. Add New Customer" + "\n"
+            + "2. Display Information Customer" + "\n"
+            + "3. Display Total Pay Of Customer" + "\n"
+            + "4. Edit Information Customer" + "\n"
+            + "5. Delete Customer" + "\n"
+            + "6. Exit"))
+        switch (choose) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 2: {
+                displayCustomer();
+                break;
+            }
+            case 3: {
+                displayTotalPay();
+                break;
+            }
+
+            case 4: {
+                editCustomer();
+                break;
+            }
+            case 5: {
+                deleteCustomer();
+                break;
+            }
+            case 6: {
+                break;
+            }
+            default: {
+                alert("Failed");
+            }
+        }
+    }
+    displayMainMenu();
+
+    function addNewCustomer() {
+        let check = false;
+        let customer = new Customer();
+        let name = prompt("Input your name: ");
+        let birthday;
+        let email;
+        let cmnd;
+        let discount;
+        let quantityIncluded;
+        let rentDays;
+
+        do {
+            cmnd = prompt("Input your cmnd: ");
+            if (regexCmnd.test(cmnd)) {
+                check = true;
+            } else {
+                alert("Cmnd khong hop le")
+            }
+        } while (!check)
+        check = false;
+
+        do {
+            birthday = prompt("Input your birthday: ");
+            if (regexDate.test(birthday)) {
+                check = true;
+            } else {
+                alert("Birthday khong hop le")
+            }
+        } while (!check)
+        check = false;
+
+        do {
+            email = prompt("Input your email: ");
+            if (regexEmail.test(email)) {
+                check = true;
+            } else {
+                alert("Email khong hop le")
+            }
+        } while (!check)
+        check = false;
+
+        let address = prompt("Input your address: ");
+        let typeCustomer = prompt("Input type customer: ");
+
+        do {
+            discount = prompt("Input your discount: ");
+            if (regexNumber.test(discount)) {
+                check = true;
+            } else {
+                alert("Discount khong hop le")
+            }
+        } while (!check)
+        check = false;
+
+        do {
+            quantityIncluded = prompt("Input quantity included: ");
+            if (regexNumber.test(quantityIncluded)) {
+                check = true;
+            } else {
+                alert("So luong khong hop le")
+            }
+        } while (!check)
+        check = false;
+
+        do {
+            rentDays = prompt("Input your rent days: ");
+            if (regexNumber.test(rentDays)) {
+                check = true;
+            } else {
+                alert("So ngay thue khong hop le")
+            }
+        } while (!check)
+        check = false;
+
+        let typeService = prompt("Input your type service: ");
+        let typeRoom = prompt("Input your type room: ");
+        customer.setName(name);
+        customer.setCmnd(cmnd);
+        customer.setBirthday(birthday);
+        customer.setEmail(email);
+        customer.setAddress(address);
+        customer.setTypeCustomer(typeCustomer);
+        customer.setDiscount(discount);
+        customer.setQuantityIncluded(quantityIncluded);
+        customer.setRentDays(rentDays);
+        customer.setTypeService(typeService);
+        customer.setTypeRoom(typeRoom);
+        listCustomers.push(customer);
+        alert("Successfully added a new customer");
+        displayMainMenu();
+    }
+
+    function displayTotalPay() {
+        let temp = "";
+        for (let i = 0; i < listCustomers.length; i++) {
+            temp += (i+1) + ". Name: " + listCustomers[i].getName() + "\n";
+        }
+        let chooseDisplayTotalPay = prompt("Choose customer to display total pay: " + "\n" + temp);
+        alert("Total pay = " + listCustomers[chooseDisplayTotalPay-1].calculateTotalPay());
+        displayMainMenu();
+    }
+</script>
+</body>
+</html>

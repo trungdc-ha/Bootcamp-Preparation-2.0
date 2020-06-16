@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Req 4</title>
+</head>
+<body>
+<script>
+    let arrNameCustomers = ["Evan", "James", "Christ"];
+    let choose = parseInt(prompt("1. Add New Customer" + "\n" 
+    + "2. Delete Customers."));
+    switch (choose) {
+        case 1: {
+            let num = parseInt(prompt("Enter numbers of customers"));
+            for (let i = 3; i < (num + 3); i++) {
+                arrNameCustomers[i] = prompt("Enter name " + (i+1));
+            }
+            let temp = "";
+            arrNameCustomers.sort();
+            for (let j = 0; j < arrNameCustomers.length; j++) {
+                temp += "Name " + (j+1) + ": " + arrNameCustomers[j] + "\n";
+            }
+            alert(temp);
+            break;
+        }
+        case 2: {
+            let check = false;
+            let nameToDelete = prompt("Choose the name you want to delete: " + "\n");
+            for (let i = 0; i < arrNameCustomers.length; i++) {
+                if (nameToDelete == arrNameCustomers[i]) {
+                    arrNameCustomers.splice(i,1);
+                    check = true;
+                }
+            }
+            if (check) {
+                let temp = "";
+                arrNameCustomers.sort();
+                for (let j = 0; j < arrNameCustomers.length; j++) {
+                temp += "Name " + (j+1) + ": " + arrNameCustomers[j] + "\n";
+                }
+                alert(temp);
+            } else {
+                alert("Khong tim thay gia tri ban nhap.");
+            }
+            break;
+        }
+        default: {
+            alert("Failed");
+        }
+    }
+
+</script>
+</body>
+</html>
