@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 id="positive"></h3>
+<h3 id="zero"></h3>
+<h3 id="negative"></h3>
+
+<script>
+
+    let arr = new Array(parseInt(prompt("Nhập độ dài của mảng: ")));
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = parseInt(prompt("Nhập giá trị cho phần tử thứ " + (i + 1) + " của mảng"));
+    }
+    let countPositive = 0;
+    let countZero = 0;
+    let countNegative = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 0) {
+            countZero++
+        } else if (arr[i] > 0) {
+            countPositive++;
+        } else {
+            countNegative++;
+        }
+    }
+    document.getElementById("positive").innerHTML = "Tỷ lệ số dương: " + (countPositive/arr.length).toFixed(6);
+    document.getElementById("zero").innerHTML = "Tỷ lệ số 0: " + (countZero/arr.length).toFixed(6);
+    document.getElementById("negative").innerHTML = "Tỷ lệ số âm: " + (countNegative/arr.length).toFixed(6);
+</script>
+</body>
+</html>

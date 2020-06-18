@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let arr = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        arr[i] = parseInt(prompt("Nhập điểm thứ " + (i + 1) + " của sinh viên: "));
+    }
+    document.writeln("Số điểm ban đầu: ");
+    document.writeln(arr.join("  "));
+    for (let i = 0; i < 4; i++) {
+        let num = arr[i] % 5;
+        if (num >= 3 && arr[i] >= 38) {
+            arr[i] += (5-num);
+        }
+    }
+    document.writeln("<br>" + "Số điểm làm tròn: ");
+    document.writeln(arr.join("  "));
+</script>
+</body>
+</html>

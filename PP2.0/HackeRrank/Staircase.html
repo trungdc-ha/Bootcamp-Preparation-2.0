@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = (prompt("Nhap so nguyen duong M"));
+    let array = [];
+    for (let i = 0; i < m.length ; i++) {
+        array.push(parseInt(m[i]));
+    }
+    let tong = 0;
+    let tich = 1;
+    for (let i = 0; i < array.length; i++) {
+        tong += array[i];
+        tich *= array[i];
+    }
+    document.write("Tong: " + tong + "\n" + "Tich: " + tich);
+</script>
+</body>
+</html>

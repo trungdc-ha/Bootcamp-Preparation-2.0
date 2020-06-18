@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("Enter a string");
+    document.write(input.split("").reverse().join("") + "<br>");
+
+    let reverseInput = "";
+    for (let i = input.length-1; i>=0 ; i--) {
+        reverseInput += input.charAt(i);
+    }
+    document.write(reverseInput + "<br>");
+
+    document.write(input.toUpperCase() + "<br>");
+    document.write(input.toLowerCase() + "<br>");
+
+    let temp = "";
+    for (let i = 0; i < input.length; i++) {
+        if (input.charAt(i) == input.charAt(i).toUpperCase()) {
+            temp += input.charAt(i).toLowerCase();
+        } else {
+            temp += input.charAt(i).toUpperCase();
+        }
+    }
+    document.write(temp);
+</script>
+</body>
+</html>
